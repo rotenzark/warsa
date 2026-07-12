@@ -1,0 +1,766 @@
+/* ============================================================
+   WARSA — Cucina eritrea, Milano Porta Venezia
+   Palette: teff, caffè, berberè, senape · il mesob come firma
+   ============================================================ */
+
+:root {
+  --teff:      #F2E7D5;   /* crema d'injera: fondo */
+  --teff-vivo: #FAF3E6;   /* card */
+  --caffe:     #2E211A;   /* inchiostro e sezioni scure */
+  --caffe-2:   #3C2C22;
+  --berbere:   #A93B26;   /* rosso spezia: CTA */
+  --senape:    #C9932B;   /* accenti */
+  --sabbia:    #8A7663;   /* testo secondario */
+
+  --f-display: "Poiret One", "Georgia", cursive;
+  --f-body: "Nunito Sans", "Segoe UI", Arial, sans-serif;
+
+  --maxw: 880px;
+  --pad: clamp(20px, 5vw, 60px);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-padding-top: 76px; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+body {
+  font-family: var(--f-body);
+  font-size: 17px;
+  line-height: 1.7;
+  background: var(--teff);
+  color: var(--caffe);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--senape); color: var(--caffe); }
+
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--caffe);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.sezione-scura :focus-visible,
+.footer :focus-visible,
+.intro :focus-visible { outline-color: var(--teff); }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  top: -60px; left: 16px;
+  z-index: 400;
+  background: var(--caffe);
+  color: var(--teff);
+  padding: 10px 18px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 12px; }
+
+/* ============ INTRO "IL MESOB" (iride) ============ */
+
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: var(--caffe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: circle(150% at 50% 50%);
+}
+
+body.intro-lock { overflow: hidden; }
+
+.intro--iride {
+  clip-path: circle(0% at 50% 50%);
+  transition: clip-path 0.9s cubic-bezier(0.6, 0, 0.3, 1);
+  pointer-events: none;
+}
+
+.intro-mesob {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.intro-mesob svg {
+  width: min(56vmin, 300px);
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.anello {
+  stroke: var(--senape);
+  stroke-width: 3;
+  stroke-dasharray: 10 14;
+  stroke-dashoffset: 400;
+  opacity: 0;
+  animation: intreccio 1.2s cubic-bezier(0.4, 0, 0.3, 1) forwards;
+}
+.a1 { animation-delay: 0.20s; }
+.a2 { animation-delay: 0.42s; stroke: var(--teff); opacity: 0; }
+.a3 { animation-delay: 0.64s; }
+.a4 { animation-delay: 0.86s; stroke: var(--teff); }
+@keyframes intreccio {
+  to { stroke-dashoffset: 0; opacity: 0.9; }
+}
+
+.centro {
+  fill: var(--berbere);
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0);
+  animation: cuore 0.5s cubic-bezier(0.3, 1.3, 0.4, 1) 1.15s forwards;
+}
+@keyframes cuore {
+  to { transform: scale(1); }
+}
+
+.intro-nome {
+  font-family: var(--f-display);
+  font-size: clamp(44px, 9vw, 84px);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--teff);
+  opacity: 0;
+  animation: nome-su 0.7s ease 1.5s forwards;
+}
+.intro-riga {
+  font-size: clamp(11px, 1.6vw, 13.5px);
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--senape);
+  opacity: 0;
+  animation: nome-su 0.7s ease 1.75s forwards;
+}
+@keyframes nome-su {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ingresso hero orchestrato con la fine dell'intro */
+.has-intro .hero > *:not(.hero-anelli) {
+  opacity: 0;
+  transform: translateY(16px);
+}
+.intro-done .hero > *:not(.hero-anelli) {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.7s ease 0.25s, transform 0.7s ease 0.25s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro { display: none; }
+  .has-intro .hero > *:not(.hero-anelli) { opacity: 1; transform: none; }
+}
+
+/* ============ TOPBAR ============ */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 14px var(--pad);
+  background: rgba(242, 231, 213, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(46, 33, 26, 0.16);
+}
+
+.wordmark {
+  font-family: var(--f-display);
+  font-size: 24px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1;
+  text-decoration: none;
+  color: var(--caffe);
+  white-space: nowrap;
+}
+
+.nav { margin-right: auto; }
+.nav-toggle { display: none; }
+
+.nav-menu {
+  display: flex;
+  gap: 26px;
+  list-style: none;
+}
+.nav-menu a {
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  color: var(--sabbia);
+  transition: color 0.15s;
+}
+.nav-menu a:hover { color: var(--caffe); }
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  min-height: 32px;
+  background: none;
+  border: none;
+  color: var(--sabbia);
+  font: inherit;
+  cursor: pointer;
+  padding: 6px 8px;
+}
+.lang-btn.is-active { color: var(--berbere); }
+.lang-btn:hover { color: var(--caffe); }
+.lang-sep { color: rgba(46, 33, 26, 0.25); }
+
+/* ============ BOTTONI ============ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 15px 28px;
+  font-family: var(--f-body);
+  font-size: 15.5px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.15s, background-color 0.15s, border-color 0.15s;
+}
+.btn:active { transform: scale(0.98); }
+
+.btn-berbere {
+  background: var(--berbere);
+  color: #FFF6EA;
+}
+.btn-berbere:hover { background: #8E2F1D; }
+
+.btn-teff {
+  background: var(--teff);
+  color: var(--caffe);
+}
+.btn-teff:hover { background: #E8DAC1; }
+
+.btn-quieto {
+  border: 1.5px solid rgba(46, 33, 26, 0.35);
+  color: var(--caffe);
+  background: none;
+}
+.btn-quieto:hover { border-color: var(--caffe); }
+
+.btn-quieto-chiaro {
+  border: 1.5px solid rgba(242, 231, 213, 0.4);
+  color: var(--teff);
+  background: none;
+}
+.btn-quieto-chiaro:hover { border-color: var(--teff); }
+
+.btn-small { padding: 9px 18px; font-size: 14px; }
+
+/* ============ HERO (cerimoniale, centrato) ============ */
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - 55px);
+  min-height: calc(100svh - 55px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px var(--pad);
+  overflow: hidden;
+}
+
+.hero-anelli {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -54%);
+  width: min(120vmin, 720px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.anello-h {
+  stroke: var(--senape);
+  stroke-width: 1.6;
+  stroke-dasharray: 10 14;
+  opacity: 0.55;
+}
+.anello-h:nth-child(2),
+.anello-h:nth-child(4) { stroke: var(--sabbia); opacity: 0.35; }
+.centro-h { fill: rgba(169, 59, 38, 0.35); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-anelli svg {
+    animation: mesob-gira 90s linear infinite;
+  }
+  @keyframes mesob-gira {
+    to { transform: rotate(360deg); }
+  }
+}
+
+.hero > * { position: relative; z-index: 2; }
+
+.eyebrow {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--berbere);
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-family: var(--f-display);
+  font-size: clamp(72px, 15vw, 180px);
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--caffe);
+  margin-right: -0.18em; /* compensa il letter-spacing per il centraggio ottico */
+}
+
+.hero-sub {
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--senape);
+  text-transform: uppercase;
+  margin: 18px 0 24px;
+}
+
+.hero-lead {
+  max-width: 620px;
+  font-size: clamp(17px, 2vw, 20px);
+  color: var(--sabbia);
+  margin-bottom: 36px;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.hero-proof {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sabbia);
+}
+
+/* ============ DIVISORE (mesob piccolo) ============ */
+
+.divisore {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+}
+.divisore svg { width: 54px; height: 54px; }
+.d-anello {
+  stroke: var(--senape);
+  stroke-width: 2;
+  stroke-dasharray: 6 9;
+  opacity: 0.7;
+}
+.d-centro { fill: var(--berbere); opacity: 0.8; }
+
+/* ============ SEZIONI (centrate) ============ */
+
+.sezione {
+  padding: clamp(64px, 9vw, 110px) var(--pad);
+  text-align: center;
+}
+
+.sezione > * {
+  max-width: var(--maxw);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sezione-scura {
+  background: var(--caffe);
+  color: var(--teff);
+}
+
+.sezione-titolo {
+  font-family: var(--f-display);
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.sezione-sub {
+  max-width: 560px;
+  font-size: 16.5px;
+  color: var(--sabbia);
+  margin-bottom: clamp(34px, 5vw, 52px);
+}
+.sezione-sub-chiara { color: rgba(242, 231, 213, 0.75); }
+
+/* ============ I RITI (come si mangia) ============ */
+
+.riti {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  text-align: center;
+}
+
+.rito {
+  background: var(--teff-vivo);
+  border: 1px solid rgba(46, 33, 26, 0.14);
+  border-radius: 12px;
+  padding: 30px 24px;
+}
+
+.rito-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 2px dashed var(--senape);
+  border-radius: 50%;
+  font-family: var(--f-display);
+  font-size: 22px;
+  color: var(--berbere);
+  margin-bottom: 16px;
+}
+
+.rito h3 {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.rito p {
+  font-size: 14.5px;
+  color: var(--sabbia);
+}
+
+/* ============ IL MENÙ ============ */
+
+.piatti {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 clamp(28px, 5vw, 56px);
+  text-align: left;
+}
+
+.piatto {
+  padding: 22px 4px;
+  border-bottom: 1px dashed rgba(242, 231, 213, 0.3);
+}
+
+.piatto h3 {
+  font-family: var(--f-display);
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--senape);
+  margin-bottom: 6px;
+}
+
+.piatto p {
+  font-size: 15px;
+  color: rgba(242, 231, 213, 0.78);
+}
+
+.piatti-nota {
+  margin-top: 30px;
+  font-size: 14.5px;
+  color: rgba(242, 231, 213, 0.7);
+  margin-bottom: 22px;
+}
+
+/* ============ LA SALA ============ */
+
+.sala-slots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.s-slot {
+  aspect-ratio: 4 / 3;
+  border: 2px dashed rgba(46, 33, 26, 0.28);
+  border-radius: 12px;
+  background:
+    repeating-linear-gradient(90deg,
+      rgba(46, 33, 26, 0.04) 0 2px,
+      transparent 2px 16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.s-slot svg { width: 64px; height: 64px; opacity: 0.6; }
+
+.sala-nota {
+  margin-top: 16px;
+  font-size: 13.5px;
+  font-style: italic;
+  color: var(--sabbia);
+}
+
+.stampa {
+  margin-top: 26px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--sabbia);
+}
+
+/* ============ ORARI E DOVE ============ */
+
+.orari-dove {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  text-align: left;
+  align-items: start;
+}
+
+.orari-tabella {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15.5px;
+}
+.orari-tabella th,
+.orari-tabella td {
+  text-align: left;
+  padding: 12px 0;
+  border-bottom: 1px dashed rgba(242, 231, 213, 0.25);
+  font-weight: 600;
+}
+.orari-tabella tr:first-child th,
+.orari-tabella tr:first-child td { border-top: 1px dashed rgba(242, 231, 213, 0.25); }
+.orari-tabella td {
+  text-align: right;
+  font-weight: 400;
+  color: rgba(242, 231, 213, 0.85);
+  white-space: nowrap;
+}
+
+.dove-indirizzo {
+  font-family: var(--f-display);
+  font-style: normal;
+  font-size: clamp(24px, 3vw, 32px);
+  letter-spacing: 0.06em;
+  line-height: 1.35;
+  margin-bottom: 14px;
+}
+
+.dove-metro {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(242, 231, 213, 0.75);
+  margin-bottom: 26px;
+}
+.metro-dot {
+  width: 13px; height: 13px;
+  border-radius: 50%;
+  background: #D9241D; /* rosso della M1 */
+  flex: none;
+}
+
+.dove-azioni {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.dove-note {
+  font-size: 14px;
+  color: rgba(242, 231, 213, 0.65);
+}
+
+/* ============ FOOTER ============ */
+
+.footer {
+  background: #241A14;
+  color: var(--teff);
+  padding: clamp(56px, 8vw, 96px) var(--pad) 40px;
+  border-top: 5px solid var(--berbere);
+}
+
+.footer > * {
+  max-width: var(--maxw);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-wordmark {
+  font-family: var(--f-display);
+  font-size: clamp(52px, 9vw, 110px);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: rgba(242, 231, 213, 0.14);
+  margin-bottom: clamp(38px, 5vw, 64px);
+  user-select: none;
+}
+
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 52px;
+}
+
+.footer-cols h3 {
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--senape);
+  margin-bottom: 14px;
+}
+
+.footer-cols p {
+  font-size: 15.5px;
+  color: rgba(242, 231, 213, 0.8);
+}
+.footer-cols a {
+  color: var(--teff);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(242, 231, 213, 0.3);
+  transition: border-color 0.15s;
+}
+.footer-cols a:hover { border-color: var(--senape); }
+
+.footer-legal {
+  font-size: 12.5px;
+  color: rgba(242, 231, 213, 0.72);
+  border-top: 1px solid rgba(242, 231, 213, 0.14);
+  padding-top: 22px;
+}
+
+/* ============ REVEAL ============ */
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ============ RESPONSIVE ============ */
+
+@media (max-width: 900px) {
+  .topbar { gap: 18px; }
+  .nav-menu { gap: 16px; }
+  .nav-menu a { font-size: 13.5px; }
+
+  .riti { grid-template-columns: 1fr; }
+  .piatti { grid-template-columns: 1fr; }
+  .sala-slots { grid-template-columns: 1fr; }
+  .s-slot { aspect-ratio: 21 / 9; }
+  .orari-dove { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 860px) {
+  html { scroll-padding-top: 130px; }
+
+  .topbar { gap: 16px; flex-wrap: wrap; }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: 1.5px solid rgba(46, 33, 26, 0.3);
+    border-radius: 999px;
+    color: var(--caffe);
+    font: 700 13.5px var(--f-body);
+    letter-spacing: 0.03em;
+    padding: 8px 14px;
+    cursor: pointer;
+  }
+  .nav-toggle-bar {
+    width: 14px;
+    height: 2px;
+    background: currentColor;
+    box-shadow: 0 -4px 0 currentColor, 0 4px 0 currentColor;
+  }
+
+  .nav { order: 3; width: 100%; margin: 0; }
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    padding: 6px 0 10px;
+  }
+  .nav.is-open .nav-menu { display: flex; }
+  .nav-menu a {
+    display: block;
+    padding: 12px 2px;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(46, 33, 26, 0.1);
+  }
+
+  .topbar-actions { margin-left: auto; }
+
+  .hero-cta .btn { width: 100%; }
+
+  .dove-azioni .btn { width: 100%; }
+
+  .footer-cols { grid-template-columns: 1fr; }
+}
