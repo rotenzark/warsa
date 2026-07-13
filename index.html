@@ -12,12 +12,12 @@
   <meta property="og:url" content="https://rotenzark.github.io/warsa/">
   <meta property="og:image" content="https://rotenzark.github.io/warsa/og-image.png">
   <link rel="canonical" href="https://rotenzark.github.io/warsa/">
-  <meta name="theme-color" content="#F2E7D5">
-  <link rel="icon" href="favicon.svg?v=1" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=1">
+  <meta name="theme-color" content="#F2E8D0">
+  <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=sentient@400,500,700&f[]=supreme@400,500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=3">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -59,17 +59,18 @@
 </head>
 <body>
 
-  <!-- ============ INTRO "IL MESOB" ============ -->
+  <!-- ============ INTRO "IL MESOB" (iride) ============ -->
   <div class="intro" id="intro" aria-hidden="true">
     <div class="intro-mesob">
-      <svg viewBox="0 0 300 300" fill="none" focusable="false">
-        <circle class="anello a1" cx="150" cy="150" r="130"/>
-        <circle class="anello a2" cx="150" cy="150" r="102"/>
-        <circle class="anello a3" cx="150" cy="150" r="74"/>
-        <circle class="anello a4" cx="150" cy="150" r="46"/>
-        <circle class="centro" cx="150" cy="150" r="16"/>
+      <svg class="intro-svg" viewBox="0 0 300 300" fill="none" focusable="false">
+        <circle class="anello a1" cx="150" cy="150" r="132"/>
+        <circle class="anello a2" cx="150" cy="150" r="104"/>
+        <circle class="anello a3" cx="150" cy="150" r="76"/>
+        <circle class="anello a4" cx="150" cy="150" r="48"/>
+        <circle class="centro" cx="150" cy="150" r="17"/>
       </svg>
       <p class="intro-nome">Warsa</p>
+      <p class="intro-geez" lang="ti" aria-hidden="true">ዋርሳ</p>
       <p class="intro-riga">Cucina eritrea · Milano</p>
     </div>
   </div>
@@ -78,7 +79,9 @@
   <a class="skip-link" href="#top" data-i18n="skip">Salta al contenuto</a>
 
   <header class="topbar">
-    <a class="wordmark" href="#top" aria-label="Warsa — torna su" data-i18n-aria="aria_top">Warsa</a>
+    <a class="wordmark" href="#top" aria-label="Warsa — torna su" data-i18n-aria="aria_top">
+      Warsa<span class="wordmark-geez" lang="ti" aria-hidden="true">ዋርሳ</span>
+    </a>
     <nav class="nav" aria-label="Navigazione principale" data-i18n-aria="aria_nav">
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
         <span class="nav-toggle-bar" aria-hidden="true"></span>
@@ -98,7 +101,7 @@
         <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
       </div>
       <a class="btn btn-berbere btn-small" href="tel:+3902201673">
-        <span data-i18n="call_short">Chiama</span>
+        <span data-i18n="book">Prenota</span>
       </a>
     </div>
   </header>
@@ -109,129 +112,210 @@
     <section class="hero">
       <div class="hero-anelli" aria-hidden="true">
         <svg viewBox="0 0 300 300" fill="none" focusable="false">
-          <circle class="anello-h" cx="150" cy="150" r="130"/>
-          <circle class="anello-h" cx="150" cy="150" r="102"/>
-          <circle class="anello-h" cx="150" cy="150" r="74"/>
-          <circle class="anello-h" cx="150" cy="150" r="46"/>
-          <circle class="centro-h" cx="150" cy="150" r="16"/>
+          <circle class="anello-h" cx="150" cy="150" r="132"/>
+          <circle class="anello-h" cx="150" cy="150" r="104"/>
+          <circle class="anello-h" cx="150" cy="150" r="76"/>
+          <circle class="anello-h" cx="150" cy="150" r="48"/>
+          <circle class="centro-h" cx="150" cy="150" r="17"/>
         </svg>
       </div>
       <p class="eyebrow" data-i18n="hero_eyebrow">Cucina eritrea · Via Melzo 16 — Porta Venezia, Milano</p>
       <h1 class="hero-title">Warsa</h1>
+      <p class="hero-geez" lang="ti" aria-hidden="true">ዋርሳ</p>
       <p class="hero-sub" data-i18n="hero_sub">Uno dei ristoranti storici della cucina eritrea a Milano</p>
       <p class="hero-lead" data-i18n="hero_lead">L’injera arriva al centro del tavolo, lo zighinì ci si appoggia sopra, e le posate restano nel cassetto: qui si mangia con le mani, insieme, come ad Asmara.</p>
       <div class="hero-cta">
-        <a class="btn btn-berbere" href="tel:+3902201673"><span data-i18n="call_cta">Chiama</span>&nbsp;· 02 201673</a>
+        <a class="btn btn-berbere" href="tel:+3902201673"><span data-i18n="book_cta">Prenota</span>&nbsp;· 02 201673</a>
         <a class="btn btn-quieto" href="https://warsa.qromo.it" target="_blank" rel="noopener" data-i18n="menu_cta">Sfoglia il menù digitale</a>
       </div>
-      <p class="hero-proof" data-i18n="hero_proof">4,4 su 5 · 1.472 recensioni</p>
+      <p class="hero-meta">
+        <span class="status" id="status" hidden><span class="status-dot" aria-hidden="true"></span><span class="status-text"></span></span>
+        <span class="hero-proof" data-i18n="hero_proof">4,4 su 5 · 1.472 recensioni</span>
+      </p>
     </section>
 
-    <div class="divisore" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle class="d-anello" cx="40" cy="40" r="30"/><circle class="d-anello" cx="40" cy="40" r="18"/><circle class="d-centro" cx="40" cy="40" r="6"/></svg></div>
-
-    <!-- ============ IL MESOB ============ -->
-    <section class="sezione" id="mesob">
-      <h2 class="sezione-titolo" data-i18n="mesob_title">Come si mangia da Warsa</h2>
-      <p class="sezione-sub" data-i18n="mesob_sub">Niente piatti singoli, niente forchette: la cucina eritrea è un rito collettivo.</p>
-      <div class="riti">
-        <article class="rito">
-          <span class="rito-num" aria-hidden="true">1</span>
+    <!-- ============ IL MESOB (centro concettuale, scuro) ============ -->
+    <section class="mesob" id="mesob">
+      <div class="mesob-scena">
+        <div class="mesob-arte" aria-hidden="true">
+          <svg viewBox="0 0 400 400" fill="none" focusable="false">
+            <circle class="m-ring" cx="200" cy="200" r="188"/>
+            <circle class="m-ring" cx="200" cy="200" r="150"/>
+            <circle class="m-ring" cx="200" cy="200" r="112"/>
+            <circle class="m-ring" cx="200" cy="200" r="74"/>
+            <circle class="m-injera" cx="200" cy="200" r="40"/>
+            <circle class="m-cuore" cx="200" cy="200" r="9"/>
+          </svg>
+          <span class="mesob-arte-label" lang="ti" aria-hidden="true">ኢንጀራ</span>
+        </div>
+        <div class="mesob-testo">
+          <p class="kicker" data-i18n="mesob_kicker">Il rito</p>
+          <h2 class="mesob-titolo" data-i18n="mesob_title">Come si mangia da Warsa</h2>
+          <p class="mesob-sub" data-i18n="mesob_sub">Niente piatti singoli, niente forchette: la cucina eritrea è un rito collettivo.</p>
+        </div>
+      </div>
+      <ol class="riti">
+        <li class="rito">
+          <span class="rito-num" aria-hidden="true">01</span>
           <h3 data-i18n="r1_t">L’injera è il piatto</h3>
           <p data-i18n="r1_p">Il pane spugnoso di farina di teff copre il mesob: morbido, leggermente acidulo, raccoglie tutto.</p>
-        </article>
-        <article class="rito">
-          <span class="rito-num" aria-hidden="true">2</span>
+        </li>
+        <li class="rito">
+          <span class="rito-num" aria-hidden="true">02</span>
           <h3 data-i18n="r2_t">Le mani sono le posate</h3>
           <p data-i18n="r2_p">Si strappa un pezzo di injera, si prende un boccone di zighinì, e la scarpetta comincia dal primo minuto.</p>
-        </article>
-        <article class="rito">
-          <span class="rito-num" aria-hidden="true">3</span>
+        </li>
+        <li class="rito">
+          <span class="rito-num" aria-hidden="true">03</span>
           <h3 data-i18n="r3_t">Il tavolo è di tutti</h3>
           <p data-i18n="r3_p">Le portate arrivano insieme, al centro: si condivide, si assaggia, si parla. È il contrario del piatto singolo.</p>
-        </article>
-      </div>
+        </li>
+      </ol>
     </section>
 
-    <div class="divisore" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle class="d-anello" cx="40" cy="40" r="30"/><circle class="d-anello" cx="40" cy="40" r="18"/><circle class="d-centro" cx="40" cy="40" r="6"/></svg></div>
+    <!-- ============ BANNER SALA ============ -->
+    <section class="banner" aria-label="La sala di Warsa">
+      <img class="banner-img" src="img/sala-hero.jpg?v=3" alt="La sala di Warsa: soffitto drappeggiato, lampadari di perline e mobili intagliati" loading="lazy" width="1280" height="600">
+      <div class="banner-overlay">
+        <p class="banner-line" data-i18n="banner_line">Trent’anni di Asmara, in Via Melzo</p>
+      </div>
+    </section>
 
     <!-- ============ IL MENÙ ============ -->
-    <section class="sezione sezione-scura" id="menu-sez">
-      <h2 class="sezione-titolo" data-i18n="menu_title">Dal mesob</h2>
-      <p class="sezione-sub sezione-sub-chiara" data-i18n="menu_sub">I classici della casa — con le varianti vegetariane che in Eritrea sono tradizione, non moda.</p>
+    <section class="menu" id="menu-sez">
+      <div class="sez-intesta">
+        <p class="kicker" data-i18n="menu_kicker">Dal mesob</p>
+        <h2 class="sez-titolo" data-i18n="menu_title">I piatti della casa</h2>
+        <p class="sez-sub" data-i18n="menu_sub">I classici della casa — con le varianti vegetariane che in Eritrea sono tradizione, non moda.</p>
+      </div>
       <ul class="piatti">
         <li class="piatto">
-          <h3 data-i18n="p1_t">Zighinì di manzo</h3>
-          <p data-i18n="p1_p">Lo stufato simbolo: carne cotta a lungo nel berberè, il misto di spezie che scalda senza bruciare.</p>
+          <div class="piatto-foto" aria-hidden="true"><span class="piatto-ring"></span></div>
+          <div class="piatto-testo">
+            <h3 data-i18n="p1_t">Zighinì di manzo</h3>
+            <p data-i18n="p1_p">Lo stufato simbolo: carne cotta a lungo nel berberè, il misto di spezie che scalda senza bruciare.</p>
+          </div>
         </li>
         <li class="piatto">
-          <h3 data-i18n="p2_t">Zighinì di pollo</h3>
-          <p data-i18n="p2_p">La variante più gentile, stessa lentezza e stesse spezie.</p>
+          <div class="piatto-foto" aria-hidden="true"><span class="piatto-ring"></span></div>
+          <div class="piatto-testo">
+            <h3 data-i18n="p2_t">Zighinì di pollo</h3>
+            <p data-i18n="p2_p">La variante più gentile, stessa lentezza e stesse spezie.</p>
+          </div>
         </li>
         <li class="piatto">
-          <h3 data-i18n="p3_t">Zighinì vegetariano</h3>
-          <p data-i18n="p3_p">Verdure e legumi al berberè: lenticchie, ceci e l’orto che c’è.</p>
+          <div class="piatto-foto" aria-hidden="true"><span class="piatto-ring"></span></div>
+          <div class="piatto-testo">
+            <h3 data-i18n="p3_t">Zighinì vegetariano</h3>
+            <p data-i18n="p3_p">Verdure e legumi al berberè: lenticchie, ceci e l’orto che c’è.</p>
+          </div>
         </li>
         <li class="piatto">
-          <h3 data-i18n="p4_t">Tibs</h3>
-          <p data-i18n="p4_p">Bocconcini di carne saltati con spezie: il piatto di chi ha fretta solo a parole.</p>
+          <div class="piatto-foto" aria-hidden="true"><span class="piatto-ring"></span></div>
+          <div class="piatto-testo">
+            <h3 data-i18n="p4_t">Tibs</h3>
+            <p data-i18n="p4_p">Bocconcini di carne saltati con spezie: il piatto di chi ha fretta solo a parole.</p>
+          </div>
         </li>
         <li class="piatto">
-          <h3 data-i18n="p5_t">Sambusa</h3>
-          <p data-i18n="p5_p">Fagottini fritti ripieni di carne o verdure: si comincia da qui.</p>
+          <div class="piatto-foto" aria-hidden="true"><span class="piatto-ring"></span></div>
+          <div class="piatto-testo">
+            <h3 data-i18n="p5_t">Sambusa</h3>
+            <p data-i18n="p5_p">Fagottini fritti ripieni di carne o verdure: si comincia da qui.</p>
+          </div>
         </li>
         <li class="piatto">
-          <h3 data-i18n="p6_t">Injera di teff</h3>
-          <p data-i18n="p6_p">Sempre in tavola, perché è la tavola.</p>
+          <div class="piatto-foto" aria-hidden="true"><span class="piatto-ring"></span></div>
+          <div class="piatto-testo">
+            <h3 data-i18n="p6_t">Injera di teff</h3>
+            <p data-i18n="p6_p">Sempre in tavola, perché è la tavola.</p>
+          </div>
         </li>
       </ul>
-      <p class="piatti-nota" data-i18n="menu_note">Conto tipico: 25–35 € a persona. Il menù completo, coi prezzi del giorno, è sul menù digitale del ristorante.</p>
-      <a class="btn btn-teff" href="https://warsa.qromo.it" target="_blank" rel="noopener" data-i18n="menu_cta2">Apri il menù digitale</a>
+      <div class="menu-coda">
+        <p class="piatti-nota" data-i18n="menu_note">Conto tipico: 25–35 € a persona. Il menù completo, coi prezzi del giorno, è sul menù digitale del ristorante.</p>
+        <a class="btn btn-berbere" href="https://warsa.qromo.it" target="_blank" rel="noopener" data-i18n="menu_cta2">Apri il menù digitale</a>
+      </div>
     </section>
-
-    <div class="divisore" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle class="d-anello" cx="40" cy="40" r="30"/><circle class="d-anello" cx="40" cy="40" r="18"/><circle class="d-centro" cx="40" cy="40" r="6"/></svg></div>
 
     <!-- ============ LA SALA ============ -->
-    <section class="sezione" id="sala">
-      <h2 class="sezione-titolo" data-i18n="room_title">La sala</h2>
-      <p class="sezione-sub" data-i18n="room_sub">Colori caldi, tappeti e artigianato tradizionale: trent’anni di Asmara nel cuore di Porta Venezia.</p>
-      <div class="sala-slots" aria-hidden="true">
-        <div class="s-slot"><svg viewBox="0 0 80 80" fill="none"><circle class="d-anello" cx="40" cy="40" r="26"/><circle class="d-centro" cx="40" cy="40" r="5"/></svg></div>
-        <div class="s-slot"></div>
-        <div class="s-slot"></div>
+    <section class="sala" id="sala">
+      <div class="sez-intesta">
+        <p class="kicker" data-i18n="room_kicker">Il posto</p>
+        <h2 class="sez-titolo" data-i18n="room_title">La sala</h2>
+        <p class="sez-sub" data-i18n="room_sub">Colori caldi, tappeti e artigianato tradizionale: trent’anni di Asmara nel cuore di Porta Venezia.</p>
       </div>
-      <p class="sala-nota" data-i18n="room_note">Le fotografie della sala e dei piatti arrivano col primo servizio fotografico.</p>
-      <p class="stampa"><span data-i18n="press">Ne hanno scritto:</span> Urbanfile (2026) · MilanoToday · italia.it</p>
+      <div class="gallery" id="gallery">
+        <button class="tile" type="button" data-full="img/g1-lg.jpg?v=3" data-cap="cap_sala">
+          <img src="img/g1.jpg?v=3" alt="La sala di Warsa" data-i18n-alt="cap_sala" loading="lazy" width="760" height="570">
+          <span class="tile-cap" data-i18n="cap_sala">La sala di Warsa</span>
+        </button>
+        <button class="tile" type="button" data-full="img/g2-lg.jpg?v=3" data-cap="cap_zighini">
+          <img src="img/g2.jpg?v=3" alt="Injera con zighinì" data-i18n-alt="cap_zighini" loading="lazy" width="760" height="570">
+          <span class="tile-cap" data-i18n="cap_zighini">Injera con zighinì</span>
+        </button>
+        <button class="tile" type="button" data-full="img/g3-lg.jpg?v=3" data-cap="cap_intagli">
+          <img src="img/g3.jpg?v=3" alt="Paraventi e intagli" data-i18n-alt="cap_intagli" loading="lazy" width="760" height="570">
+          <span class="tile-cap" data-i18n="cap_intagli">Paraventi e intagli</span>
+        </button>
+        <button class="tile" type="button" data-full="img/g4-lg.jpg?v=3" data-cap="cap_tibs">
+          <img src="img/g4.jpg?v=3" alt="Tibs con injera" data-i18n-alt="cap_tibs" loading="lazy" width="760" height="570">
+          <span class="tile-cap" data-i18n="cap_tibs">Tibs con injera</span>
+        </button>
+        <button class="tile" type="button" data-full="img/g5-lg.jpg?v=3" data-cap="cap_mesob">
+          <img src="img/g5.jpg?v=3" alt="Il mesob in tavola" data-i18n-alt="cap_mesob" loading="lazy" width="760" height="570">
+          <span class="tile-cap" data-i18n="cap_mesob">Il mesob in tavola</span>
+        </button>
+        <button class="tile" type="button" data-full="img/g6-lg.jpg?v=3" data-cap="cap_sambusa">
+          <img src="img/g6.jpg?v=3" alt="Sambusa" data-i18n-alt="cap_sambusa" loading="lazy" width="760" height="570">
+          <span class="tile-cap" data-i18n="cap_sambusa">Sambusa</span>
+        </button>
+        <button class="tile" type="button" data-full="img/g7-lg.jpg?v=3" data-cap="cap_tavola">
+          <img src="img/g7.jpg?v=3" alt="La tavola apparecchiata" data-i18n-alt="cap_tavola" loading="lazy" width="760" height="570">
+          <span class="tile-cap" data-i18n="cap_tavola">La tavola apparecchiata</span>
+        </button>
+        <button class="tile" type="button" data-full="img/g8-lg.jpg?v=3" data-cap="cap_spezie">
+          <img src="img/g8.jpg?v=3" alt="Il berberè, le spezie" data-i18n-alt="cap_spezie" loading="lazy" width="760" height="570">
+          <span class="tile-cap" data-i18n="cap_spezie">Il berberè, le spezie</span>
+        </button>
+      </div>
+      <p class="sala-nota" data-i18n="room_note">Immagini di repertorio (Urbanfile) — in attesa del servizio fotografico ufficiale del locale.</p>
+      <p class="stampa"><span class="stampa-eti" data-i18n="press">Ne hanno scritto</span> <span class="stampa-lista">Urbanfile · MilanoToday · italia.it</span></p>
     </section>
 
-    <div class="divisore" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle class="d-anello" cx="40" cy="40" r="30"/><circle class="d-anello" cx="40" cy="40" r="18"/><circle class="d-centro" cx="40" cy="40" r="6"/></svg></div>
-
     <!-- ============ ORARI E DOVE ============ -->
-    <section class="sezione sezione-scura" id="orari">
-      <h2 class="sezione-titolo" data-i18n="hours_title">Orari e dove</h2>
-      <div class="orari-dove">
-        <table class="orari-tabella">
-          <caption class="visually-hidden" data-i18n="hours_caption">Orari di apertura</caption>
-          <tbody>
-            <tr><th scope="row" data-i18n="mon">Lunedì</th><td>19:00 – 23:30</td></tr>
-            <tr><th scope="row" data-i18n="tue">Martedì</th><td>12:00 – 15:30 · 19:00 – 23:30</td></tr>
-            <tr><th scope="row" data-i18n="wed">Mercoledì</th><td data-i18n="closed">chiuso</td></tr>
-            <tr><th scope="row" data-i18n="thu">Giovedì</th><td>12:00 – 15:00 · 19:00 – 23:00</td></tr>
-            <tr><th scope="row" data-i18n="fri">Venerdì</th><td>12:00 – 15:00 · 19:00 – 23:30</td></tr>
-            <tr><th scope="row" data-i18n="sat">Sabato</th><td>12:00 – 15:00 · 19:00 – 22:30</td></tr>
-            <tr><th scope="row" data-i18n="sun">Domenica</th><td>12:00 – 15:00 · 19:00 – 23:30</td></tr>
-          </tbody>
-        </table>
-        <div class="dove">
+    <section class="orari" id="orari">
+      <div class="orari-griglia">
+        <div class="orari-col">
+          <p class="kicker kicker-chiaro" data-i18n="hours_kicker">Quando</p>
+          <h2 class="orari-titolo" data-i18n="hours_title">Orari</h2>
+          <div class="status status-grande" id="status2" hidden><span class="status-dot" aria-hidden="true"></span><span class="status-text"></span></div>
+          <table class="orari-tabella">
+            <caption class="visually-hidden" data-i18n="hours_caption">Orari di apertura</caption>
+            <tbody>
+              <tr data-day="1"><th scope="row" data-i18n="mon">Lunedì</th><td>19:00 – 23:30</td></tr>
+              <tr data-day="2"><th scope="row" data-i18n="tue">Martedì</th><td>12:00 – 15:30 · 19:00 – 23:30</td></tr>
+              <tr data-day="3"><th scope="row" data-i18n="wed">Mercoledì</th><td data-i18n="closed">chiuso</td></tr>
+              <tr data-day="4"><th scope="row" data-i18n="thu">Giovedì</th><td>12:00 – 15:00 · 19:00 – 23:00</td></tr>
+              <tr data-day="5"><th scope="row" data-i18n="fri">Venerdì</th><td>12:00 – 15:00 · 19:00 – 23:30</td></tr>
+              <tr data-day="6"><th scope="row" data-i18n="sat">Sabato</th><td>12:00 – 15:00 · 19:00 – 22:30</td></tr>
+              <tr data-day="0"><th scope="row" data-i18n="sun">Domenica</th><td>12:00 – 15:00 · 19:00 – 23:30</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="dove-col">
+          <p class="kicker kicker-chiaro" data-i18n="where_kicker">Dove</p>
           <address class="dove-indirizzo">
             Via Melzo 16<br>
-            20129 Milano — Porta Venezia
+            20129 Milano<br>
+            <span class="dove-zona">Porta Venezia</span>
           </address>
           <p class="dove-metro"><span class="metro-dot" aria-hidden="true"></span> <span data-i18n="metro">M1 Porta Venezia, cinque minuti a piedi</span></p>
           <div class="dove-azioni">
-            <a class="btn btn-teff" href="tel:+3902201673"><span data-i18n="call_cta">Chiama</span>&nbsp;· 02 201673</a>
+            <a class="btn btn-berbere" href="tel:+3902201673"><span data-i18n="book_cta">Prenota</span>&nbsp;· 02 201673</a>
             <a class="btn btn-quieto-chiaro" href="https://www.google.com/maps/search/?api=1&query=Via+Melzo+16%2C+Milano" target="_blank" rel="noopener" data-i18n="maps">Apri in Google Maps</a>
           </div>
-          <p class="dove-note"><span data-i18n="cards">Carte accettate · sala accessibile</span></p>
+          <p class="dove-note" data-i18n="cards">Carte accettate · sala accessibile</p>
         </div>
       </div>
     </section>
@@ -240,7 +324,7 @@
 
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
-    <p class="footer-wordmark" aria-hidden="true">Warsa</p>
+    <p class="footer-wordmark" aria-hidden="true">Warsa <span lang="ti">ዋርሳ</span></p>
     <div class="footer-cols">
       <div>
         <h3 data-i18n="f_contacts">Contatti</h3>
@@ -259,6 +343,23 @@
     <p class="footer-legal">© <span data-current-year>2026</span> Ristorante Warsa — Via Melzo 16, 20129 Milano</p>
   </footer>
 
-  <script src="js/main.js?v=1"></script>
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galleria fotografica" hidden>
+    <button class="lb-close" type="button" aria-label="Chiudi">&times;</button>
+    <button class="lb-nav lb-prev" type="button" aria-label="Precedente">&#8249;</button>
+    <figure class="lb-fig">
+      <img class="lb-img" src="" alt="">
+      <figcaption class="lb-cap"></figcaption>
+    </figure>
+    <button class="lb-nav lb-next" type="button" aria-label="Successiva">&#8250;</button>
+  </div>
+
+  <!-- ============ BARRA AZIONI (mobile) ============ -->
+  <div class="actionbar" id="actionbar" aria-hidden="true">
+    <a class="ab-btn ab-primary" href="tel:+3902201673"><span data-i18n="book">Prenota</span></a>
+    <a class="ab-btn ab-second" href="https://warsa.qromo.it" target="_blank" rel="noopener" data-i18n="menu_short">Menù</a>
+  </div>
+
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>
