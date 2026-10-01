@@ -1,0 +1,23 @@
+/* Caratteri ospitati sul sito: nessuna richiesta a Google Fonts o Fontshare (giro privacy 1/10/2026). Licenze in LICENSE.txt. */
+/* Sentient */
+@font-face {
+  font-family: 'Sentient';
+  src: url('fontshare-RVTZPYAA57KV4AMXRX7ZIPJXSTYCRP7A-36OUS5CBIXRKI2QU7G7OUHOK7HHA53Y2-SIH66VPT4WS2HIF5PEJNDU4INNUF54LG.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Sentient';
+  src: url('fontshare-XVVLA67EPQTZD7YHR3MQPW2IQXXDTGPX-IHGNDJMSP2Y53DG23KZTPBH753PUEUB2-RNUZPHMIVMPXFHVACRGCAJ32E6WUEDVU.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Sentient';
+  src: url('fontshare-XC4UYXMVQINJJ47RSKB74CCAWSP5BUGZ-TGOWV4725NO3KHVKMWHG47SRPLMNHMOO-433XP6QWDVL6KQ5K7ZCOP524TX4LE4RJ.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
